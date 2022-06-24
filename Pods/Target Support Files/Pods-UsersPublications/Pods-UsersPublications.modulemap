@@ -1,0 +1,6 @@
+framework module Pods_UsersPublications {
+  umbrella header "Pods-UsersPublications-umbrella.h"
+
+  export *
+  module * { export * }
+}
