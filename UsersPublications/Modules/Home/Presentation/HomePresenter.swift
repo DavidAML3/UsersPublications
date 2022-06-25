@@ -8,11 +8,23 @@
 import Foundation
 
 protocol IHomePresenter {
-    
+    func getUsersData()
 }
 
 class HomePresenter: IHomePresenter {
     
     var interactor: IHomeInteractor!
     weak var view: HomeView!
+    
+    init(view: HomeView) {
+        print("Presenter")
+        self.interactor = HomeInteractor()
+        self.view = view
+    }
+    
+    func getUsersData() {
+        interactor.getUsersData { response in
+            //
+        }
+    }
 }

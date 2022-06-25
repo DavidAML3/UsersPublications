@@ -13,6 +13,18 @@ class HomeView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("View")
+        setupModule()
+        setData()
+    }
+    
+    func setupModule() {
+        self.presenter = HomePresenter(view: self)
+    }
+    
+    func setData() {
+        presenter.getUsersData()
     }
 }
 

@@ -8,10 +8,21 @@
 import Foundation
 
 protocol IHomeInteractor {
-    
+    func getUsersData(_ completion: @escaping (_ response: String) -> Void)
 }
 
 class HomeInteractor: IHomeInteractor {
     
     var repository: IHomeRepository!
+    
+    init() {
+        print("Interactor")
+        self.repository = HomeRepository()
+    }
+    
+    func getUsersData(_ completion: @escaping (_ response: String) -> Void) {
+        repository.getUsersData { response in
+            //
+        }
+    }
 }
