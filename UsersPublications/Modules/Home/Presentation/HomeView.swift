@@ -15,6 +15,7 @@ class HomeView: UIViewController {
     var presenter: IHomePresenter!
     
     var usersList = [User]()
+    var searchList = [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class HomeView: UIViewController {
         setData()
         setupTableView()
         setupView()
+        setupSearchBar()
     }
     
     func setupModule() {
@@ -35,9 +37,12 @@ class HomeView: UIViewController {
     }
     
     func setupTableView() {
-        let nibName = "UserCell"
-        let nib = UINib(nibName: nibName, bundle: UsersPublicationsAPI.bundle)
-        tableView.register(nib, forCellReuseIdentifier: nibName)
+        let userCellNibName = "UserCell"
+        let defaultCellNibNAme = "DefaultCell"
+        let userNib = UINib(nibName: userCellNibName, bundle: UsersPublicationsAPI.bundle)
+        let defaultNib = UINib(nibName: defaultCellNibNAme, bundle: UsersPublicationsAPI.bundle)
+        tableView.register(userNib, forCellReuseIdentifier: userCellNibName)
+        tableView.register(defaultNib, forCellReuseIdentifier: defaultCellNibNAme)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -49,22 +54,51 @@ class HomeView: UIViewController {
         searchBar.borderStyle = .none
         searchBar.layer.addSublayer(bottomLine)
     }
+    
+    func setupSearchBar() {
+        searchBar.addTarget(self, action: #selector(searchRecords(_ :)), for: .editingChanged)
+    }
+    
+    @objc func searchRecords(_ textField: UITextField) {
+        self.usersList.removeAll()
+        if textField.text?.count != 0 {
+            for user in searchList {
+                if let userToSearch = textField.text {
+                    if let _ = user.name.lowercased().range(of: userToSearch, options: .caseInsensitive, range: nil, locale: nil) {
+                        usersList.append(user)
+                    }
+                }
+            }
+        } else {
+            for user in searchList {
+                usersList.append(user)
+            }
+        }
+        tableView.reloadData()
+    }
 }
 
 extension HomeView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return usersList.count
+        return usersList.count != 0 ? usersList.count : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         
-        let user = usersList[indexPath.row]
-        
-        cell.userName.text = user.name
-        cell.userPhone.text = user.phone
-        cell.userEmail.text = user.email
-        
-        return cell
+        if usersList.count == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath) as! DefaultCell
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
+            
+            let user = usersList[indexPath.row]
+            
+            cell.userName.text = user.name
+            cell.userPhone.text = user.phone
+            cell.userEmail.text = user.email
+            
+            return cell
+        }
     }
 }

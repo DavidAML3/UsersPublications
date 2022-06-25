@@ -25,6 +25,7 @@ class HomePresenter: IHomePresenter {
     func getUsersData() {
         interactor.getUsersData { response in
             self.view.usersList = response
+            self.view.searchList = response
             self.view.tableView.reloadData()
         }
     }
