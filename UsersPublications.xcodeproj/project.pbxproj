@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3859411D2866BE4100B156A0 /* UsersPublicationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859411C2866BE4100B156A0 /* UsersPublicationsAPI.swift */; };
+		385941222866BF6600B156A0 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385941212866BF6600B156A0 /* HomePresenter.swift */; };
+		385941242866BF9C00B156A0 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385941232866BF9C00B156A0 /* HomeInteractor.swift */; };
+		385941262866BFC200B156A0 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385941252866BFC200B156A0 /* HomeRepository.swift */; };
+		385941282866BFE500B156A0 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385941272866BFE500B156A0 /* HomeDataSource.swift */; };
+		3859412B2866C0A400B156A0 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412A2866C0A300B156A0 /* RequestManager.swift */; };
+		3859412D2866C0E600B156A0 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412C2866C0E600B156A0 /* HomeRouter.swift */; };
 		38E1F80F28661D0B00CD01CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E1F80E28661D0B00CD01CB /* AppDelegate.swift */; };
 		38E1F81128661D0B00CD01CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E1F81028661D0B00CD01CB /* SceneDelegate.swift */; };
-		38E1F81328661D0B00CD01CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E1F81228661D0B00CD01CB /* ViewController.swift */; };
+		38E1F81328661D0B00CD01CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E1F81228661D0B00CD01CB /* HomeView.swift */; };
 		38E1F81628661D0B00CD01CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38E1F81428661D0B00CD01CB /* Main.storyboard */; };
 		38E1F81928661D0B00CD01CB /* UsersPublications.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38E1F81728661D0B00CD01CB /* UsersPublications.xcdatamodeld */; };
 		38E1F81B28661D1700CD01CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38E1F81A28661D1700CD01CB /* Assets.xcassets */; };
@@ -18,10 +25,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3859411C2866BE4100B156A0 /* UsersPublicationsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPublicationsAPI.swift; sourceTree = "<group>"; };
+		385941212866BF6600B156A0 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		385941232866BF9C00B156A0 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		385941252866BFC200B156A0 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		385941272866BFE500B156A0 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
+		3859412A2866C0A300B156A0 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		3859412C2866C0E600B156A0 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		38E1F80B28661D0B00CD01CB /* UsersPublications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsersPublications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E1F80E28661D0B00CD01CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E1F81028661D0B00CD01CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		38E1F81228661D0B00CD01CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38E1F81228661D0B00CD01CB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		38E1F81528661D0B00CD01CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		38E1F81828661D0B00CD01CB /* UsersPublications.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UsersPublications.xcdatamodel; sourceTree = "<group>"; };
 		38E1F81A28661D1700CD01CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +61,7 @@
 		3855D724286673E7001708B7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				385941192866BDAD00B156A0 /* Configuration */,
 				3855D7272866740D001708B7 /* Home */,
 			);
 			path = Modules;
@@ -55,6 +70,7 @@
 		3855D725286673F2001708B7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				385941292866C08D00B156A0 /* Alamofire */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -71,7 +87,10 @@
 		3855D7272866740D001708B7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				38E1F81228661D0B00CD01CB /* ViewController.swift */,
+				385941202866BF5200B156A0 /* Data */,
+				3859411F2866BF4D00B156A0 /* Domain */,
+				3859411E2866BF4600B156A0 /* Presentation */,
+				3859412C2866C0E600B156A0 /* HomeRouter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -92,6 +111,48 @@
 				38E1F81C28661D1700CD01CB /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		385941192866BDAD00B156A0 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				3859411C2866BE4100B156A0 /* UsersPublicationsAPI.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		3859411E2866BF4600B156A0 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				385941212866BF6600B156A0 /* HomePresenter.swift */,
+				38E1F81228661D0B00CD01CB /* HomeView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		3859411F2866BF4D00B156A0 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				385941232866BF9C00B156A0 /* HomeInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		385941202866BF5200B156A0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				385941272866BFE500B156A0 /* HomeDataSource.swift */,
+				385941252866BFC200B156A0 /* HomeRepository.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		385941292866C08D00B156A0 /* Alamofire */ = {
+			isa = PBXGroup;
+			children = (
+				3859412A2866C0A300B156A0 /* RequestManager.swift */,
+			);
+			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		38E1F80228661D0A00CD01CB = {
@@ -139,7 +200,6 @@
 				5185A112A38965D6D4F553A6 /* Pods-UsersPublications.debug.xcconfig */,
 				4FA4B17558881D17BDC6E6B6 /* Pods-UsersPublications.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,10 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38E1F81328661D0B00CD01CB /* ViewController.swift in Sources */,
+				385941262866BFC200B156A0 /* HomeRepository.swift in Sources */,
+				38E1F81328661D0B00CD01CB /* HomeView.swift in Sources */,
 				38E1F81928661D0B00CD01CB /* UsersPublications.xcdatamodeld in Sources */,
+				3859411D2866BE4100B156A0 /* UsersPublicationsAPI.swift in Sources */,
+				385941222866BF6600B156A0 /* HomePresenter.swift in Sources */,
+				3859412B2866C0A400B156A0 /* RequestManager.swift in Sources */,
 				38E1F80F28661D0B00CD01CB /* AppDelegate.swift in Sources */,
 				38E1F81128661D0B00CD01CB /* SceneDelegate.swift in Sources */,
+				385941282866BFE500B156A0 /* HomeDataSource.swift in Sources */,
+				385941242866BF9C00B156A0 /* HomeInteractor.swift in Sources */,
+				3859412D2866C0E600B156A0 /* HomeRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +485,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,6 +514,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
