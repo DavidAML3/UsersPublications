@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IHomeInteractor {
-    func getUsersData(_ completion: @escaping (_ response: String) -> Void)
+    func getUsersData(_ completion: @escaping (_ list: [User]) -> Void)
 }
 
 class HomeInteractor: IHomeInteractor {
@@ -20,9 +20,9 @@ class HomeInteractor: IHomeInteractor {
         self.repository = HomeRepository()
     }
     
-    func getUsersData(_ completion: @escaping (_ response: String) -> Void) {
-        repository.getUsersData { response in
-            //
+    func getUsersData(_ completion: @escaping (_ list: [User]) -> Void) {
+        repository.getUsersData { list in
+            completion(list)
         }
     }
 }

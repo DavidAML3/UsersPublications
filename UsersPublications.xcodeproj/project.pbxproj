@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3815CE072867951D0073D2BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3815CE062867951D0073D2BF /* User.swift */; };
 		3859411D2866BE4100B156A0 /* UsersPublicationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859411C2866BE4100B156A0 /* UsersPublicationsAPI.swift */; };
 		385941222866BF6600B156A0 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385941212866BF6600B156A0 /* HomePresenter.swift */; };
 		385941242866BF9C00B156A0 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385941232866BF9C00B156A0 /* HomeInteractor.swift */; };
@@ -15,6 +16,9 @@
 		3859412B2866C0A400B156A0 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412A2866C0A300B156A0 /* RequestManager.swift */; };
 		3859412D2866C0E600B156A0 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412C2866C0E600B156A0 /* HomeRouter.swift */; };
 		385941302866D1E300B156A0 /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412F2866D1E300B156A0 /* UtilityMethods.swift */; };
+		38C65F752867AFBB00C1D53D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C65F732867AFBB00C1D53D /* UserCell.swift */; };
+		38C65F762867AFBB00C1D53D /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C65F742867AFBB00C1D53D /* UserCell.xib */; };
+		38C65F782867BCB900C1D53D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C65F772867BCB900C1D53D /* Colors.swift */; };
 		38E1F80F28661D0B00CD01CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E1F80E28661D0B00CD01CB /* AppDelegate.swift */; };
 		38E1F81128661D0B00CD01CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E1F81028661D0B00CD01CB /* SceneDelegate.swift */; };
 		38E1F81328661D0B00CD01CB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E1F81228661D0B00CD01CB /* HomeView.swift */; };
@@ -26,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3815CE062867951D0073D2BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3859411C2866BE4100B156A0 /* UsersPublicationsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPublicationsAPI.swift; sourceTree = "<group>"; };
 		385941212866BF6600B156A0 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		385941232866BF9C00B156A0 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
@@ -34,6 +39,9 @@
 		3859412A2866C0A300B156A0 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		3859412C2866C0E600B156A0 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		3859412F2866D1E300B156A0 /* UtilityMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMethods.swift; sourceTree = "<group>"; };
+		38C65F732867AFBB00C1D53D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		38C65F742867AFBB00C1D53D /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		38C65F772867BCB900C1D53D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		38E1F80B28661D0B00CD01CB /* UsersPublications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsersPublications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38E1F80E28661D0B00CD01CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38E1F81028661D0B00CD01CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +68,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3815CE05286795050073D2BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3815CE062867951D0073D2BF /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3815CE082867AC4F0073D2BF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				38C65F732867AFBB00C1D53D /* UserCell.swift */,
+				38C65F742867AFBB00C1D53D /* UserCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3855D724286673E7001708B7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +152,7 @@
 		3859411E2866BF4600B156A0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				3815CE082867AC4F0073D2BF /* Views */,
 				385941212866BF6600B156A0 /* HomePresenter.swift */,
 				38E1F81228661D0B00CD01CB /* HomeView.swift */,
 			);
@@ -136,6 +162,7 @@
 		3859411F2866BF4D00B156A0 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				3815CE05286795050073D2BF /* Model */,
 				385941232866BF9C00B156A0 /* HomeInteractor.swift */,
 			);
 			path = Domain;
@@ -162,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				3859412F2866D1E300B156A0 /* UtilityMethods.swift */,
+				38C65F772867BCB900C1D53D /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -274,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C65F762867AFBB00C1D53D /* UserCell.xib in Resources */,
 				38E1F81E28661D1700CD01CB /* LaunchScreen.storyboard in Resources */,
 				38E1F81B28661D1700CD01CB /* Assets.xcassets in Resources */,
 				38E1F81628661D0B00CD01CB /* Main.storyboard in Resources */,
@@ -329,11 +358,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3815CE072867951D0073D2BF /* User.swift in Sources */,
+				38C65F782867BCB900C1D53D /* Colors.swift in Sources */,
 				385941262866BFC200B156A0 /* HomeRepository.swift in Sources */,
 				38E1F81328661D0B00CD01CB /* HomeView.swift in Sources */,
 				38E1F81928661D0B00CD01CB /* UsersPublications.xcdatamodeld in Sources */,
 				3859411D2866BE4100B156A0 /* UsersPublicationsAPI.swift in Sources */,
 				385941222866BF6600B156A0 /* HomePresenter.swift in Sources */,
+				38C65F752867AFBB00C1D53D /* UserCell.swift in Sources */,
 				3859412B2866C0A400B156A0 /* RequestManager.swift in Sources */,
 				38E1F80F28661D0B00CD01CB /* AppDelegate.swift in Sources */,
 				38E1F81128661D0B00CD01CB /* SceneDelegate.swift in Sources */,
@@ -490,6 +522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 645JDL6UG9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UsersPublications/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -519,6 +552,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 645JDL6UG9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UsersPublications/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
