@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IHomeRepository {
-    func getUsersData(_ completion: @escaping (_ list: [User]) -> Void)
+    func requestUsersData(_ completion: @escaping (_ list: [User]) -> Void)
 }
 
 class HomeRepository: IHomeRepository {
@@ -19,7 +19,7 @@ class HomeRepository: IHomeRepository {
         print("Repository")
     }
     
-    func getUsersData(_ completion: @escaping (_ list: [User]) -> Void) {
+    func requestUsersData(_ completion: @escaping (_ list: [User]) -> Void) {
         let endpoint = "https://jsonplaceholder.typicode.com/users"
         datasource.requestUsersData(endpoint: endpoint) { [weak self] data in
             guard let strongSelf = self else { return }
@@ -31,8 +31,8 @@ class HomeRepository: IHomeRepository {
         var userList = [User]()
         
         for user in data {
-            if let name = user["name"] as? String, let phone = user["phone"] as? String, let email = user["email"] as? String {
-                let user = User(name: name, phone: phone, email: email)
+            if let id = user["id"] as? Int, let name = user["name"] as? String, let phone = user["phone"] as? String, let email = user["email"] as? String {
+                let user = User(id: id, name: name, phone: phone, email: email)
                 userList.append(user)
             }
         }

@@ -14,18 +14,18 @@ class HomeView: UIViewController {
     
     var presenter: IHomePresenter!
     
-    var usersList = [User]()
-    var searchList = [User]()
+    var usersList = [UserItem]()
+    var searchList = [UserItem]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("View")
         setupModule()
-        setData()
         setupTableView()
         setupView()
         setupSearchBar()
+        
+        setData()
     }
     
     func setupModule() {
@@ -64,7 +64,7 @@ class HomeView: UIViewController {
         if textField.text?.count != 0 {
             for user in searchList {
                 if let userToSearch = textField.text {
-                    if let _ = user.name.lowercased().range(of: userToSearch, options: .caseInsensitive, range: nil, locale: nil) {
+                    if let _ = user.name?.lowercased().range(of: userToSearch, options: .caseInsensitive, range: nil, locale: nil) {
                         usersList.append(user)
                     }
                 }
@@ -74,7 +74,13 @@ class HomeView: UIViewController {
                 usersList.append(user)
             }
         }
-        tableView.reloadData()
+        reloadTableView()
+    }
+    
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
