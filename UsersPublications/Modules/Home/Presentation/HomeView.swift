@@ -15,7 +15,11 @@ class HomeView: UIViewController {
     var presenter: IHomePresenter!
     
     var usersList = [UserItem]()
-    var searchList = [UserItem]()
+    
+    deinit {
+        print("Deinit view")
+        NotificationCenter.default.removeObserver(self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,25 +28,21 @@ class HomeView: UIViewController {
         setupTableView()
         setupView()
         setupSearchBar()
+        setupKeyboard()
         
         setData()
     }
     
+    // MARK: - Setups
     func setupModule() {
         self.presenter = HomePresenter(view: self)
     }
     
-    func setData() {
-        presenter.getUsersData()
-    }
-    
     func setupTableView() {
-        let userCellNibName = "UserCell"
-        let defaultCellNibNAme = "DefaultCell"
-        let userNib = UINib(nibName: userCellNibName, bundle: UsersPublicationsAPI.bundle)
-        let defaultNib = UINib(nibName: defaultCellNibNAme, bundle: UsersPublicationsAPI.bundle)
-        tableView.register(userNib, forCellReuseIdentifier: userCellNibName)
-        tableView.register(defaultNib, forCellReuseIdentifier: defaultCellNibNAme)
+        let userNib = UINib(nibName: UserCell.id, bundle: UsersPublicationsAPI.bundle)
+        let defaultNib = UINib(nibName: DefaultCell.id, bundle: UsersPublicationsAPI.bundle)
+        tableView.register(userNib, forCellReuseIdentifier: UserCell.id)
+        tableView.register(defaultNib, forCellReuseIdentifier: DefaultCell.id)
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -59,23 +59,28 @@ class HomeView: UIViewController {
         searchBar.addTarget(self, action: #selector(searchRecords(_ :)), for: .editingChanged)
     }
     
-    @objc func searchRecords(_ textField: UITextField) {
-        self.usersList.removeAll()
-        if textField.text?.count != 0 {
-            for user in searchList {
-                if let userToSearch = textField.text {
-                    if let _ = user.name?.lowercased().range(of: userToSearch, options: .caseInsensitive, range: nil, locale: nil) {
-                        usersList.append(user)
-                    }
-                }
-            }
-        } else {
-            for user in searchList {
-                usersList.append(user)
-            }
-        }
-        reloadTableView()
+    func setupKeyboard() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
+    
+    // MARK: - Sets
+    
+    func setData() {
+        presenter.getUsersData()
+    }
+    
+    // MARK: - objc functions
+    
+    @objc func searchRecords(_ textField: UITextField) {
+        presenter.getSearchItems(textField: textField)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    // MARK: - Others
     
     func reloadTableView() {
         DispatchQueue.main.async {
@@ -92,11 +97,11 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if usersList.count == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DefaultCell", for: indexPath) as! DefaultCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: DefaultCell.id, for: indexPath) as! DefaultCell
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.id, for: indexPath) as! UserCell
             
             let user = usersList[indexPath.row]
             

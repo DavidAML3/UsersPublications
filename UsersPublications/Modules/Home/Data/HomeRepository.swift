@@ -13,15 +13,18 @@ protocol IHomeRepository {
 
 class HomeRepository: IHomeRepository {
     
-    var datasource: IHomeDataSource = HomeDataSource()
+    var datasource: IHomeDataSource!
     
     init() {
-        print("Repository")
+        self.datasource = HomeDataSource()
+    }
+    
+    deinit {
+        print("Deinit repository")
     }
     
     func requestUsersData(_ completion: @escaping (_ list: [User]) -> Void) {
-        let endpoint = "https://jsonplaceholder.typicode.com/users"
-        datasource.requestUsersData(endpoint: endpoint) { [weak self] data in
+        datasource.requestUsersData(endpoint: EndpointList.GET_USERS_DATA) { [weak self] data in
             guard let strongSelf = self else { return }
             completion(strongSelf.parseUsersData(data: data))
         }

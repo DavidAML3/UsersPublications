@@ -16,6 +16,8 @@
 		3859412B2866C0A400B156A0 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412A2866C0A300B156A0 /* RequestManager.swift */; };
 		3859412D2866C0E600B156A0 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412C2866C0E600B156A0 /* HomeRouter.swift */; };
 		385941302866D1E300B156A0 /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412F2866D1E300B156A0 /* UtilityMethods.swift */; };
+		389656C12868906E0093F73B /* EndpointList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656C02868906E0093F73B /* EndpointList.swift */; };
+		389656C42868918E0093F73B /* UsersPublicationsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656C32868918E0093F73B /* UsersPublicationsPersistence.swift */; };
 		38C65F752867AFBB00C1D53D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C65F732867AFBB00C1D53D /* UserCell.swift */; };
 		38C65F762867AFBB00C1D53D /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C65F742867AFBB00C1D53D /* UserCell.xib */; };
 		38C65F782867BCB900C1D53D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C65F772867BCB900C1D53D /* Colors.swift */; };
@@ -44,6 +46,8 @@
 		3859412A2866C0A300B156A0 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		3859412C2866C0E600B156A0 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		3859412F2866D1E300B156A0 /* UtilityMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMethods.swift; sourceTree = "<group>"; };
+		389656C02868906E0093F73B /* EndpointList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointList.swift; sourceTree = "<group>"; };
+		389656C32868918E0093F73B /* UsersPublicationsPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPublicationsPersistence.swift; sourceTree = "<group>"; };
 		38C65F732867AFBB00C1D53D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		38C65F742867AFBB00C1D53D /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		38C65F772867BCB900C1D53D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 		3855D724286673E7001708B7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				389656C22868916B0093F73B /* CoreData */,
 				385941192866BDAD00B156A0 /* Configuration */,
 				3855D7272866740D001708B7 /* Home */,
 			);
@@ -111,6 +116,7 @@
 			children = (
 				3859412E2866D01100B156A0 /* Utils */,
 				385941292866C08D00B156A0 /* Alamofire */,
+				389656C02868906E0093F73B /* EndpointList.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -205,6 +211,14 @@
 				38C65F8E28681D0400C1D53D /* Extensions.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		389656C22868916B0093F73B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				389656C32868918E0093F73B /* UsersPublicationsPersistence.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		38C65F7D2867FA5B00C1D53D /* Data */ = {
@@ -383,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3815CE072867951D0073D2BF /* User.swift in Sources */,
+				389656C42868918E0093F73B /* UsersPublicationsPersistence.swift in Sources */,
 				38C65F7B2867C5E500C1D53D /* DefaultCell.swift in Sources */,
 				38C65F782867BCB900C1D53D /* Colors.swift in Sources */,
 				385941262866BFC200B156A0 /* HomeRepository.swift in Sources */,
@@ -400,6 +415,7 @@
 				385941282866BFE500B156A0 /* HomeDataSource.swift in Sources */,
 				385941242866BF9C00B156A0 /* HomeInteractor.swift in Sources */,
 				3859412D2866C0E600B156A0 /* HomeRouter.swift in Sources */,
+				389656C12868906E0093F73B /* EndpointList.swift in Sources */,
 				385941302866D1E300B156A0 /* UtilityMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

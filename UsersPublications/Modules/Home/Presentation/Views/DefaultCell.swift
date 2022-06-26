@@ -8,6 +8,7 @@
 import UIKit
 
 class DefaultCell: UITableViewCell {
+    static let id = "DefaultCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

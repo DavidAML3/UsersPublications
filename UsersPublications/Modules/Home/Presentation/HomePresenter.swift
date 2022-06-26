@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 protocol IHomePresenter {
+    func getSearchItems(textField: UITextField)
     func getUsersData()
 }
 
@@ -17,11 +18,26 @@ class HomePresenter: IHomePresenter {
     var interactor: IHomeInteractor!
     weak var view: HomeView!
     
-    var spinner: UIView?
+    private var spinner: UIView?
     
     init(view: HomeView) {
         self.interactor = HomeInteractor()
         self.view = view
+    }
+    
+    deinit {
+        print("Deinit presenter")
+    }
+    
+    func getSearchItems(textField: UITextField) {
+        if let text = textField.text {
+            interactor.getSearchItems(text: text) { [weak self] list in
+                guard let strongSelf = self else { return }
+                
+                strongSelf.view.usersList = list
+                strongSelf.view.reloadTableView()
+            }
+        }
     }
     
     func getUsersData() {

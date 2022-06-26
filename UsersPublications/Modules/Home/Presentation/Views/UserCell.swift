@@ -8,6 +8,7 @@
 import UIKit
 
 class UserCell: UITableViewCell {
+    static let id = "UserCell"
 
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userPhone: UILabel!
