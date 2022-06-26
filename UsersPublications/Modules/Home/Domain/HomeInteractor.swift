@@ -22,10 +22,6 @@ class HomeInteractor: IHomeInteractor {
         self.repository = HomeRepository()
     }
     
-    deinit {
-        print("Deinit interactor")
-    }
-    
     func getSearchItems(text: String, _ completion: @escaping (_ list: [UserItem]) -> Void) {
         let searchList = UsersPublicationsPersistence.shared.getCDItems()
         
@@ -46,9 +42,10 @@ class HomeInteractor: IHomeInteractor {
     }
     
     func getDataFromDatabase(_ completion: @escaping (_ list: [UserItem]) -> Void) {
+        // uncomment the following 2 lines if you want to erase the data from the database
+//        UsersPublicationsPersistence.shared.deleteCD()
+        
         items = UsersPublicationsPersistence.shared.getCDItems()
-        // uncomment the following line if you want to erase the data from the database
-//        deleteCD()
         
         if !items.isEmpty {
             completion(items)
@@ -60,13 +57,15 @@ class HomeInteractor: IHomeInteractor {
     func requestUsersData(_ completion: @escaping (_ list: [UserItem]) -> Void) {
         repository.requestUsersData { [weak self] list in
             
-            guard let strongself = self else { return }
+            guard let strongSelf = self else { return }
             
             for user in list {
                 UsersPublicationsPersistence.shared.createCDItem(id: Int16(user.id), name: user.name, phone: user.phone, email: user.email)
             }
             
-            completion(strongself.items)
+            strongSelf.items = UsersPublicationsPersistence.shared.getCDItems()
+            
+            completion(strongSelf.items)
         }
     }
 }

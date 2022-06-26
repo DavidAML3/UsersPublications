@@ -20,7 +20,6 @@ class HomeView: UIViewController {
     var userId: Int?
     
     deinit {
-        print("Deinit view")
         NotificationCenter.default.removeObserver(self)
     }
 
@@ -86,9 +85,7 @@ class HomeView: UIViewController {
     // MARK: - Others
     
     func reloadTableView() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        self.tableView.reloadData()
     }
 }
 
@@ -98,7 +95,6 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if usersList.count == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: DefaultCell.id, for: indexPath) as! DefaultCell
             

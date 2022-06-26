@@ -19,10 +19,6 @@ class HomeRepository: IHomeRepository {
         self.datasource = HomeDataSource()
     }
     
-    deinit {
-        print("Deinit repository")
-    }
-    
     func requestUsersData(_ completion: @escaping (_ list: [User]) -> Void) {
         let endpoint = "\(EndpointList.BASE_URL)/users"
         datasource.requestUsersData(endpoint: endpoint) { [weak self] data in

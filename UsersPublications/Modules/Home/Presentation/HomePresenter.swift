@@ -28,10 +28,6 @@ class HomePresenter: IHomePresenter {
         self.view = view
     }
     
-    deinit {
-        print("Deinit presenter")
-    }
-    
     func getSearchItems(textField: UITextField) {
         if let text = textField.text {
             interactor.getSearchItems(text: text) { [weak self] list in
@@ -75,6 +71,9 @@ class HomePresenter: IHomePresenter {
     
     private func setupUsersLists(list: [UserItem]) {
         self.view.usersList = list
-        self.view.reloadTableView()
+        
+        DispatchQueue.main.async {
+            self.view.reloadTableView()
+        }
     }
 }

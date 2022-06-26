@@ -51,16 +51,15 @@ class UsersPublicationsPersistence {
     }
     
     func deleteCD() {
-        let context = persistentContainer.viewContext
+        guard let url = persistentContainer.persistentStoreDescriptions.first?.url else { return }
+        
+        let persistentStoreCoordinator = persistentContainer.persistentStoreCoordinator
+        
         do {
-            for item in items {
-                context.delete(item)
-            }
-            
-            try context.save()
-            let _ = getCDItems()
+            try persistentStoreCoordinator.destroyPersistentStore(at:url, ofType: NSSQLiteStoreType, options: nil)
+            try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
         } catch {
-            // error
+            print("Attempted to clear persistent store: " + error.localizedDescription)
         }
     }
 }
