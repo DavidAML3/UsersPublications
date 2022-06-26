@@ -8,7 +8,7 @@
 import UIKit
 
 protocol CellDelegate {
-    func didButtonPressed(id: Int, name: String)
+    func didButtonPressed(userData: UserItem)
 }
 
 class UserCell: UITableViewCell {
@@ -16,7 +16,7 @@ class UserCell: UITableViewCell {
     
     var delegate: CellDelegate?
     
-    var id: Int!
+    var user: UserItem!
 
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userPhone: UILabel!
@@ -24,7 +24,7 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var actionButton: UIButton!
     
     @IBAction func actionButton(_ sender: Any) {
-        delegate?.didButtonPressed(id: id, name: userName.text!)
+        delegate?.didButtonPressed(userData: user!)
     }
     
     override func layoutSubviews() {

@@ -16,8 +16,8 @@ class PublicationsView: UIViewController {
     var presenter: IPublicationsPresenter!
     
     var publications = [Publication]()
-    var userName: String?
-    var userId: Int?
+    
+    var userData: UserItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,14 +29,50 @@ class PublicationsView: UIViewController {
     
     func setupTableView() {
         let userNib = UINib(nibName: UserCell.id, bundle: UsersPublicationsAPI.bundle)
-        let defaultNib = UINib(nibName: DefaultCell.id, bundle: UsersPublicationsAPI.bundle)
+        let publicationNib = UINib(nibName: PublicationsCell.id, bundle: UsersPublicationsAPI.bundle)
         tableView.register(userNib, forCellReuseIdentifier: UserCell.id)
-        tableView.register(defaultNib, forCellReuseIdentifier: DefaultCell.id)
+        tableView.register(publicationNib, forCellReuseIdentifier: PublicationsCell.id)
         tableView.delegate = self
         tableView.dataSource = self
     }
     
     func setData() {
-        userNameLbl.text = userName
+        presenter.getUserPublications(userId: Int(userData!.id))
+    }
+    
+    // MARK: - Others
+    
+    func reloadTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
+
+extension PublicationsView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return publications.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.id, for: indexPath) as! UserCell
+            
+            cell.userName.text = userData?.name
+            cell.userPhone.text = userData?.phone
+            cell.userEmail.text = userData?.email
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PublicationsCell.id, for: indexPath) as! PublicationsCell
+            
+            let publication = publications[indexPath.row]
+            
+            cell.titleLbl.text = publication.title
+            cell.descriptionLbl.text = publication.description
+            
+            return cell
+        }
     }
 }

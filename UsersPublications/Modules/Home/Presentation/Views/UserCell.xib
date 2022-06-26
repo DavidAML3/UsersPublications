@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -71,7 +72,7 @@
                         </connections>
                     </button>
                 </subviews>
-                <color key="backgroundColor" red="0.96860462430000005" green="0.96868532900000004" blue="0.96470540760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <color key="backgroundColor" name="grey"/>
                 <constraints>
                     <constraint firstItem="wQ5-8c-JEn" firstAttribute="centerY" secondItem="dx6-c8-CQL" secondAttribute="centerY" id="2yp-dX-bSC"/>
                     <constraint firstItem="WNc-pX-O4L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="3Cq-He-9v1"/>
@@ -104,5 +105,8 @@
     <resources>
         <image name="mail" catalog="system" width="128" height="93"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
+        <namedColor name="grey">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

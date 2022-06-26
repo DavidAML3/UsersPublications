@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IPublicationsRepository {
-    
+    func requestUsersPublications(userId: Int, _ completion: @escaping (_ list: [Publication]) -> Void)
 }
 
 class PublicationsRepository: IPublicationsRepository {

@@ -12,8 +12,7 @@ class HomeRouter {
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
-    func showPublicationsView(view: UIViewController, userName: String, userId: Int) {
-        print("Router")
+    func showPublicationsView(view: UIViewController, userData: UserItem) {
         
         let controller = storyboard.instantiateViewController(withIdentifier: "PublicationsView") as! PublicationsView
         
@@ -22,8 +21,7 @@ class HomeRouter {
         let presenter = PublicationsPresenter(view: controller, interactor: interactor)
         
         controller.presenter = presenter
-        controller.userName = userName
-        controller.userId = userId
+        controller.userData = userData
         
         view.present(controller, animated: true, completion: nil)
     }

@@ -108,7 +108,8 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
             let user = usersList[indexPath.row]
             
-            cell.id = Int(user.id)
+            cell.user = user
+            
             cell.userName.text = user.name
             cell.userPhone.text = user.phone
             cell.userEmail.text = user.email
@@ -121,7 +122,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HomeView: CellDelegate {
-    func didButtonPressed(id: Int, name: String) {
-        presenter.showPublicationsView(userName: name, userId: id)
+    func didButtonPressed(userData: UserItem) {
+        presenter.showPublicationsView(userData: userData)
     }
 }

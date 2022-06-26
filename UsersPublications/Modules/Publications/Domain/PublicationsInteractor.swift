@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IPublicationsInteractor {
-    func getUserPublications(_ completion: @escaping (_ list: [Publication]) -> Void)
+    func getUserPublications(userId: Int, _ completion: @escaping (_ list: [Publication]) -> Void)
 }
 
 class PublicationsInteractor: IPublicationsInteractor {
@@ -19,7 +19,9 @@ class PublicationsInteractor: IPublicationsInteractor {
         self.repository = repository
     }
     
-    func getUserPublications(_ completion: @escaping (_ list: [Publication]) -> Void) {
-        
+    func getUserPublications(userId: Int, _ completion: @escaping (_ list: [Publication]) -> Void) {
+        repository.requestUsersPublications(userId: userId) { list in
+            completion(list)
+        }
     }
 }
