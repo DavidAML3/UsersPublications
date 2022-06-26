@@ -11,17 +11,20 @@ import UIKit
 protocol IHomePresenter {
     func getSearchItems(textField: UITextField)
     func getUsersData()
+    func showPublicationsView(userName: String, userId: Int)
 }
 
 class HomePresenter: IHomePresenter {
     
     var interactor: IHomeInteractor!
+    var router: HomeRouter!
     weak var view: HomeView!
     
     private var spinner: UIView?
     
     init(view: HomeView) {
         self.interactor = HomeInteractor()
+        self.router = HomeRouter()
         self.view = view
     }
     
@@ -66,9 +69,13 @@ class HomePresenter: IHomePresenter {
         }
     }
     
+    func showPublicationsView(userName: String, userId: Int) {
+        print("Presenter")
+        router.showPublicationsView(view: self.view, userName: userName, userId: userId)
+    }
+    
     private func setupUsersLists(list: [UserItem]) {
         self.view.usersList = list
-        self.view.searchList = list
         self.view.reloadTableView()
     }
 }

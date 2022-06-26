@@ -67,7 +67,7 @@
                             <color key="titleColor" red="0.176558733" green="0.39023476839999999" blue="0.1881966591" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </state>
                         <connections>
-                            <action selector="seePublications:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="fpR-TB-bY9"/>
+                            <action selector="actionButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="eRc-19-iBn"/>
                         </connections>
                     </button>
                 </subviews>
@@ -93,6 +93,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="actionButton" destination="xBA-OW-7XN" id="lhW-3Z-5nm"/>
                 <outlet property="userEmail" destination="wQ5-8c-JEn" id="PG1-pN-tTg"/>
                 <outlet property="userName" destination="WNc-pX-O4L" id="5vd-Jl-WKn"/>
                 <outlet property="userPhone" destination="Cbm-7i-95L" id="USg-Zy-yzl"/>

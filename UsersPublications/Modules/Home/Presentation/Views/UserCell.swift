@@ -7,14 +7,24 @@
 
 import UIKit
 
+protocol CellDelegate {
+    func didButtonPressed(id: Int, name: String)
+}
+
 class UserCell: UITableViewCell {
     static let id = "UserCell"
+    
+    var delegate: CellDelegate?
+    
+    var id: Int!
 
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userPhone: UILabel!
     @IBOutlet weak var userEmail: UILabel!
+    @IBOutlet weak var actionButton: UIButton!
     
-    @IBAction func seePublications(_ sender: Any) {
+    @IBAction func actionButton(_ sender: Any) {
+        delegate?.didButtonPressed(id: id, name: userName.text!)
     }
     
     override func layoutSubviews() {

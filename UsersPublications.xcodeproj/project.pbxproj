@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381336862868CA9500C53EC7 /* Publication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381336852868CA9500C53EC7 /* Publication.swift */; };
 		3815CE072867951D0073D2BF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3815CE062867951D0073D2BF /* User.swift */; };
 		3859411D2866BE4100B156A0 /* UsersPublicationsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859411C2866BE4100B156A0 /* UsersPublicationsAPI.swift */; };
 		385941222866BF6600B156A0 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385941212866BF6600B156A0 /* HomePresenter.swift */; };
@@ -18,6 +19,11 @@
 		385941302866D1E300B156A0 /* UtilityMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3859412F2866D1E300B156A0 /* UtilityMethods.swift */; };
 		389656C12868906E0093F73B /* EndpointList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656C02868906E0093F73B /* EndpointList.swift */; };
 		389656C42868918E0093F73B /* UsersPublicationsPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656C32868918E0093F73B /* UsersPublicationsPersistence.swift */; };
+		389656CA28689FC80093F73B /* PublicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656C928689FC80093F73B /* PublicationsView.swift */; };
+		389656CC28689FD50093F73B /* PublicationsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656CB28689FD50093F73B /* PublicationsPresenter.swift */; };
+		389656CE28689FE10093F73B /* PublicationsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656CD28689FE10093F73B /* PublicationsInteractor.swift */; };
+		389656D028689FEC0093F73B /* PublicationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656CF28689FEC0093F73B /* PublicationsRepository.swift */; };
+		389656D22868A0000093F73B /* PublicationsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389656D12868A0000093F73B /* PublicationsDataSource.swift */; };
 		38C65F752867AFBB00C1D53D /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C65F732867AFBB00C1D53D /* UserCell.swift */; };
 		38C65F762867AFBB00C1D53D /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38C65F742867AFBB00C1D53D /* UserCell.xib */; };
 		38C65F782867BCB900C1D53D /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C65F772867BCB900C1D53D /* Colors.swift */; };
@@ -37,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381336852868CA9500C53EC7 /* Publication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publication.swift; sourceTree = "<group>"; };
 		3815CE062867951D0073D2BF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3859411C2866BE4100B156A0 /* UsersPublicationsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPublicationsAPI.swift; sourceTree = "<group>"; };
 		385941212866BF6600B156A0 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -48,6 +55,11 @@
 		3859412F2866D1E300B156A0 /* UtilityMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityMethods.swift; sourceTree = "<group>"; };
 		389656C02868906E0093F73B /* EndpointList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointList.swift; sourceTree = "<group>"; };
 		389656C32868918E0093F73B /* UsersPublicationsPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPublicationsPersistence.swift; sourceTree = "<group>"; };
+		389656C928689FC80093F73B /* PublicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsView.swift; sourceTree = "<group>"; };
+		389656CB28689FD50093F73B /* PublicationsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsPresenter.swift; sourceTree = "<group>"; };
+		389656CD28689FE10093F73B /* PublicationsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsInteractor.swift; sourceTree = "<group>"; };
+		389656CF28689FEC0093F73B /* PublicationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsRepository.swift; sourceTree = "<group>"; };
+		389656D12868A0000093F73B /* PublicationsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicationsDataSource.swift; sourceTree = "<group>"; };
 		38C65F732867AFBB00C1D53D /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		38C65F742867AFBB00C1D53D /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		38C65F772867BCB900C1D53D /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -82,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		381336842868CA8A00C53EC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				381336852868CA9500C53EC7 /* Publication.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3815CE05286795050073D2BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +127,7 @@
 				389656C22868916B0093F73B /* CoreData */,
 				385941192866BDAD00B156A0 /* Configuration */,
 				3855D7272866740D001708B7 /* Home */,
+				389656C528689F920093F73B /* Publications */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -219,6 +240,43 @@
 				389656C32868918E0093F73B /* UsersPublicationsPersistence.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		389656C528689F920093F73B /* Publications */ = {
+			isa = PBXGroup;
+			children = (
+				389656C828689FB70093F73B /* Data */,
+				389656C728689FB20093F73B /* Domain */,
+				389656C628689FA90093F73B /* Presentation */,
+			);
+			path = Publications;
+			sourceTree = "<group>";
+		};
+		389656C628689FA90093F73B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				389656CB28689FD50093F73B /* PublicationsPresenter.swift */,
+				389656C928689FC80093F73B /* PublicationsView.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		389656C728689FB20093F73B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				381336842868CA8A00C53EC7 /* Model */,
+				389656CD28689FE10093F73B /* PublicationsInteractor.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		389656C828689FB70093F73B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				389656D12868A0000093F73B /* PublicationsDataSource.swift */,
+				389656CF28689FEC0093F73B /* PublicationsRepository.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		38C65F7D2867FA5B00C1D53D /* Data */ = {
@@ -397,8 +455,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3815CE072867951D0073D2BF /* User.swift in Sources */,
+				389656D22868A0000093F73B /* PublicationsDataSource.swift in Sources */,
 				389656C42868918E0093F73B /* UsersPublicationsPersistence.swift in Sources */,
+				381336862868CA9500C53EC7 /* Publication.swift in Sources */,
+				389656D028689FEC0093F73B /* PublicationsRepository.swift in Sources */,
 				38C65F7B2867C5E500C1D53D /* DefaultCell.swift in Sources */,
+				389656CC28689FD50093F73B /* PublicationsPresenter.swift in Sources */,
 				38C65F782867BCB900C1D53D /* Colors.swift in Sources */,
 				385941262866BFC200B156A0 /* HomeRepository.swift in Sources */,
 				38E1F81328661D0B00CD01CB /* HomeView.swift in Sources */,
@@ -414,8 +476,10 @@
 				38C65F8D2867FE8900C1D53D /* UserItem+CoreDataProperties.swift in Sources */,
 				385941282866BFE500B156A0 /* HomeDataSource.swift in Sources */,
 				385941242866BF9C00B156A0 /* HomeInteractor.swift in Sources */,
+				389656CA28689FC80093F73B /* PublicationsView.swift in Sources */,
 				3859412D2866C0E600B156A0 /* HomeRouter.swift in Sources */,
 				389656C12868906E0093F73B /* EndpointList.swift in Sources */,
+				389656CE28689FE10093F73B /* PublicationsInteractor.swift in Sources */,
 				385941302866D1E300B156A0 /* UtilityMethods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,7 +24,8 @@ class HomeRepository: IHomeRepository {
     }
     
     func requestUsersData(_ completion: @escaping (_ list: [User]) -> Void) {
-        datasource.requestUsersData(endpoint: EndpointList.GET_USERS_DATA) { [weak self] data in
+        let endpoint = "\(EndpointList.BASE_URL)/users"
+        datasource.requestUsersData(endpoint: endpoint) { [weak self] data in
             guard let strongSelf = self else { return }
             completion(strongSelf.parseUsersData(data: data))
         }

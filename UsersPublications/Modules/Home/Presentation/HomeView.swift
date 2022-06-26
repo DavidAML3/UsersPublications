@@ -16,6 +16,9 @@ class HomeView: UIViewController {
     
     var usersList = [UserItem]()
     
+    var userName: String?
+    var userId: Int?
+    
     deinit {
         print("Deinit view")
         NotificationCenter.default.removeObserver(self)
@@ -105,11 +108,20 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
             
             let user = usersList[indexPath.row]
             
+            cell.id = Int(user.id)
             cell.userName.text = user.name
             cell.userPhone.text = user.phone
             cell.userEmail.text = user.email
             
+            cell.delegate = self
+            
             return cell
         }
+    }
+}
+
+extension HomeView: CellDelegate {
+    func didButtonPressed(id: Int, name: String) {
+        presenter.showPublicationsView(userName: name, userId: id)
     }
 }

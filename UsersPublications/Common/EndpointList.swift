@@ -11,5 +11,5 @@ class EndpointList {
     
     // users
     
-    static let GET_USERS_DATA = "https://jsonplaceholder.typicode.com/users"
+    static let BASE_URL = "https://jsonplaceholder.typicode.com"
 }
